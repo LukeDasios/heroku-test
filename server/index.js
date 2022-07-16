@@ -1,5 +1,3 @@
-require("dotenv").config();
-
 const express = require("express");
 const mongoose = require("mongoose");
 const cors = require("cors");
@@ -11,11 +9,8 @@ const FoodModel = require("./models/Food");
 app.use(express.json());
 app.use(cors());
 
-const PASSWORD = process.env.PASSWORD;
-const DB_NAME = process.env.DB_NAME;
-
 mongoose.connect(
-  `mongodb+srv://Luke:${PASSWORD}@crud-cluster.rcpyork.mongodb.net/${DB_NAME}?retryWrites=true&w=majority`,
+  `mongodb+srv://Luke:ccMoY99okE6B6tzb@herokutest.r8o1blq.mongodb.net/deploy-to-heroku?retryWrites=true&w=majority`,
   {
     useNewUrlParser: true,
     useUnifiedTopology: true,
