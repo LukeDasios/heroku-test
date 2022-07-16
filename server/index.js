@@ -3,19 +3,18 @@ const mongoose = require("mongoose");
 const cors = require("cors");
 const app = express();
 
+const uri = process.env.MONGODB_URI;
+
 const FoodModel = require("./models/Food");
 
 // Allows us to receive data in JSON format
 app.use(express.json());
 app.use(cors());
 
-mongoose.connect(
-  `mongodb+srv://Luke:ccMoY99okE6B6tzb@herokutest.r8o1blq.mongodb.net/deploy-to-heroku?retryWrites=true&w=majority`,
-  {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-  }
-);
+mongoose.connect(uri, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+});
 
 // You can search for things by name, or by number of days since you last ate it
 // app.get("/read", async (req, res) => {
